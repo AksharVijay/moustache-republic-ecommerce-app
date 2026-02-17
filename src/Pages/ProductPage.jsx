@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { fetchProduct } from "../services/productApi";
 import ProductDetails from "../components/Product/ProductDetails";
+import MiniCart from "../components/Cart/MiniCart";
 
 const ProductPage = () => {
   const [product, setProduct] = useState(null);
@@ -26,8 +27,7 @@ const ProductPage = () => {
 
   const addToCart = (product, selectedSize) => {
     const existingItem = cartItems.find(
-      (item) =>
-        item.size.id === selectedSize.id,
+      (item) => item.size.id === selectedSize.id,
     );
     if (existingItem) {
       setCartItems((prev) =>
@@ -40,8 +40,18 @@ const ProductPage = () => {
     } else {
       setCartItems((prev) => [
         ...prev,
-        { product, selectedSize, quantity: 1 },
-    ]);
+        {
+          id: product.id,
+          title: product.title,
+          image: product.imageURL,
+          price: product.price,
+          size: {
+            id: selectedSize.id,
+            label: selectedSize.label || selectedSize.long,
+          },
+          quantity: 1,
+        },
+      ]);
     }
   };
 
@@ -52,7 +62,8 @@ const ProductPage = () => {
         <div className="loading">Loading...</div>
       ) : (
         <div className="product">
-          <ProductDetails product={product} addToCart={addToCart}/>
+          <ProductDetails product={product} addToCart={addToCart} />
+          <MiniCart cartItems={cartItems} />
         </div>
       )}
     </div>
