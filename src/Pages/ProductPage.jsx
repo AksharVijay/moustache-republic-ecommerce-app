@@ -52,7 +52,7 @@ const ProductPage = () => {
         <div className="loading">Loading...</div>
       ) : (
         <div className="product">
-          <ProductDetails product={product} />
+          <ProductDetails product={product} addToCart={addToCart}/>
         </div>
       )}
     </div>
