@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { fetchProduct } from '../services/productApi';
+import ProductDetails from '../components/Product/ProductDetails';
 
 const ProductPage = () => {
 
@@ -28,10 +29,7 @@ const ProductPage = () => {
          { error  && <div className="error">{error}</div>}
               { loading ? <div className="loading">Loading...</div> :
                 <div className="product">
-                    <h1>{product.title}</h1>
-                    <img src={product.imageURL} alt={product.title} />
-                    <p>{product.description}</p>
-                    <p>${product.price}</p>
+                    <ProductDetails product={product} />
                 </div>
               }
     </div>

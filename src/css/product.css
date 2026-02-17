@@ -1,0 +1,43 @@
+.productDetails {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.productImage{
+  flex: 1;
+}
+
+.productInfo {
+  flex: 2;
+}
+
+.productImage img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.productInfo h1 {
+  margin-bottom: 1rem;
+}
+
+.productInfo p {
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .productDetails {
+    flex-direction: column;
+  }
+
+  .productImage img {
+    max-width: 100%;
+  }
+}
