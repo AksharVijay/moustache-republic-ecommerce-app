@@ -28,6 +28,7 @@ const ProductDetails = ({ product, addToCart }) => {
         <p>{product.description}</p>
 
         <div className="sizeSelectorDetails">
+          <label>Size:</label>
           <SizeSelector
             className="sizeSelector"
             sizes={product.sizeOptions}
