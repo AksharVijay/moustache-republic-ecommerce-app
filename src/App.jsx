@@ -1,10 +1,11 @@
 import './App.css'
+import ProductPage from './Pages/ProductPage'
 
 function App() {
 
   return (
     <>
-      <h1>Moustache Republic Ecommerce App</h1>
+    <ProductPage/>
     </>
   )
 }
