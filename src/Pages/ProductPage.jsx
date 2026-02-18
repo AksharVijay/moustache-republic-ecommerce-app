@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import { fetchProduct } from "../services/productApi";
 import ProductDetails from "../components/Product/ProductDetails";
 import MiniCart from "../components/Cart/MiniCart";
+import Header from "../components/Layout/Header";
 
 const ProductPage = () => {
   const [product, setProduct] = useState(null);
   const [cartItems, setCartItems] = useState([]);
+  const [isCartOpen, setCartOpen] = useState(false);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -55,17 +57,23 @@ const ProductPage = () => {
     }
   };
 
+  const toggleCart = () => {
+    console.log("Toggling cart");
+    setCartOpen((prev) => !prev);
+  };
+
   return (
     <div>
+      <Header cartItems={cartItems} toggleCart={toggleCart} />
       {error && <div className="error">{error}</div>}
       {loading ? (
         <div className="loading">Loading...</div>
       ) : (
         <div className="product">
           <ProductDetails product={product} addToCart={addToCart} />
-          <MiniCart cartItems={cartItems} />
         </div>
       )}
+      {isCartOpen && <MiniCart cartItems={cartItems} />}
     </div>
   );
 };

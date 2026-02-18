@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #eee;
+  width: 100%;
+  padding: 1rem 2rem;
+  position: relative;
+}
+
+.cart {
+  cursor: pointer;
+  font-size: 1rem;
+  border: 1px solid black;
+  padding: 0.5rem 1rem;
+  transition: 0.3s ease;
+}
+
+.cart:hover {
+  background-color: black;
+  color: white;
+}
+
+.cart:active {
+  transform: scale(0.95);
+  background-color: rgb(125, 125, 230);
+}
