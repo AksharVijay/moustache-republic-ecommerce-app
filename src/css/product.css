@@ -77,6 +77,12 @@
   border-color: black;
 }
 
+.sizeButton.active {
+  background-color: black;
+  color: white;
+  border-color: black;
+}
+
 @media (max-width: 768px) {
   .productDetails {
     flex-direction: column;
