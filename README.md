@@ -1,16 +1,46 @@
-# React + Vite
+---------------------------<<Moustache-Republic-Ecommerce-App>>------------------------------------------
+This ecommerce product page application built as part of the Full Stack Developer Technical Test.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The application displays product details, allows size selection, supports cart functionality, and includes automated testing and Docker-based deployment.
 
-Currently, two official plugins are available:
+----------------------------------------<<Tech Stack>>--------------------------------------------------------
+1. Frontend: React, JavaScript, CSS3
+2. Testing: Vitest, React Testing Library
+3. Deployment: Docker, Docker Compose, Nginx, gh Pages.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+----------------------------------<<Running Locally(Development Mode)>>--------------------------------------
+1. Go to terminal and install dependencies
+    ```bash
+    npm install
+    ```
+2. Start the development server
+    ```bash
+    npm run dev
+    ```
+3. Open the following URL in the browser
+    ```bash
+    http://localhost:5173/moustache-republic-ecommerce-app/
+    ```
+4. To run the test, Please head to command prompt and run
+    ```bash
+    npm test
+    ```
+----------------------------------------------<<Running with Docker>>---------------------------------------
+1. Go to terminal, Build and Start the container
+    ```bash
+    docker compose up --build
+    ```
+2. Open the following URL in the browser
+    ```bash
+   http://localhost:3000/moustache-republic-ecommerce-app/
+    ```
+3. To stop the container
+    ```bash
+    docker compose down
+    ```
+Please note your Docker Desktop should be running.
 
-## React Compiler
+---------------------------------------<<GitHub Pages Deployment>>----------------------------------------
+I have deployed the application Github pages please refer the link to the application 
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+https://aksharvijay.github.io/moustache-republic-ecommerce-app/
